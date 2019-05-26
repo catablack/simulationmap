@@ -13,11 +13,10 @@ class App extends React.Component {
     zoom: 7
   };
 
-
   constructor(props) {
     super(props);
 
-    this.state = { startSimulation: false, index: 0, list: null, currentCity: data[0].data[0], showInfo: 'none', };
+    this.state = { startSimulation: false, index: 0, list: null, currentCity: data[0].data[0], showInfo: 'none' };
   }
 
   handleMouseOver(param) {
@@ -57,7 +56,6 @@ class App extends React.Component {
 
       <div style={{ height: '100vh', width: '100%' }}>
 
-
         {this.state.list != null ? (<div className="title" style={{ display: this.state.startSimulation ? 'block' : 'none' }}>
           <p className="year">Year: {this.state.list.year}</p>
           <p className="year">Total: {total}</p>
@@ -82,7 +80,7 @@ class App extends React.Component {
                 );
               else {
                 alert("Simulation Over");
-                this.setState({ startSimulation: false, list: null, showInfo: 'none'});
+                this.setState({ startSimulation: false, index: 0, list: null, currentCity: data[0].data[0], showInfo: 'none', });
                 window.clearInterval(interval);
                
               }
